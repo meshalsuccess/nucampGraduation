@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../axios";
-import './Row.css';
+import "./Row.css";
 /* the reason I started with rows not columns is due to the design of Netflix
   if we take a look at Netflix app, we see that it is in rows and due to that it is extremely
   difficult to design it other wise. Alsom we can see that all the rows are the same but with different
@@ -38,6 +38,7 @@ const Row = ({ title, fetchUrl }) => {
         {/* container -->posters */}
         {movies.map((movie) => (
           <img
+            key={movie.id}
             className="image"
             src={`${base_url}${movie.poster_path}`}
             alt={movie.name}

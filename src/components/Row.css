@@ -1,0 +1,24 @@
+.row_posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 25px; /*makes the zoom effect nicer */
+}
+
+/* the following style is to remove the scroll bar that was made by line 4 for the x axis */
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  transition: transform 450ms;
+  /* without this, the images will snap bigger*/
+  margin-right: 10px;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
