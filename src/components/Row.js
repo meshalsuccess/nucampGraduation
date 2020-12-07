@@ -20,7 +20,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     //if we add movies inside it, it will keep running as long as the movies are changing
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-      console.log(request.data.results);
+      //console.log(request.data.results);
       setMovies(request.data.results);
       return request;
     }
@@ -28,7 +28,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     //fetchUrl should be included in the array otherwise it won't render again...
   }, [fetchUrl]);
 
-  console.table(movies);
+ // console.table(movies);
 
   return (
     <div className="row">
