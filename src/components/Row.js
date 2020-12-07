@@ -11,7 +11,7 @@ import "./Row.css";
 // https://developers.themoviedb.org/3/getting-started/images
 const base_url = "https://image.tmdb.org/t/p/original";
 
-const Row = ({ title, fetchUrl }) => {
+const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
 
   // I need a snippet of code which runs based of a specific condition using useEffect
@@ -39,8 +39,10 @@ const Row = ({ title, fetchUrl }) => {
         {movies.map((movie) => (
           <img
             key={movie.id}
-            className="image"
-            src={`${base_url}${movie.poster_path}`}
+            className={`image ${isLargeRow && "image_large"}`}
+            //if the image isLargeRow use image_large else image
+            src={`${base_url}${isLargeRow ? movie.poster_path: movie.backdrop_path}`}
+            //similar to if isLargeRow use movie.poster_path else use move.backdrop_path
             alt={movie.name}
           />
           //poster_path is the link that should come after the base_url, check the documentation
