@@ -1,12 +1,14 @@
 import Row from "./components/Row";
 import requests from "./requests";
 import Banner from "./components/Banner";
+import Nav from './components/Nav';
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       {/* Nav */}
+      <Nav />
       <Banner />
       <Row
         title="NETFLIX ORIGINALS"
@@ -30,3 +32,5 @@ export default App;
 genre or type of movies and that is why we need to use the fetchUrl... we will be passing the
 the fetchurl along with our API KEY from axios to fetchUrl prop
 Note that we can write them down but it will be a long piece of code.  */
+
+// stopped at 2:20 of the video continue tomorrow :)
